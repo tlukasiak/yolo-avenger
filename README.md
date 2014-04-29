@@ -45,6 +45,7 @@ It also watches the files for changes, allowing livereload (http://livereload.co
 
 Building for deployment is a slightly longer process as it performs some mininification and optimization
 
+```grunt build```
 ```grunt serve:dist```
 
 All the files needed for deployment can now be found in the dist directory.
@@ -71,3 +72,9 @@ Once the dist directory is part of you project we can use git subtree to set up 
 Now you can commit to your entire repository in your default (master) branch and whenever you want to deploy the dist directory you can run:
 
 ```git subtree push --prefix dist origin gh-pages```
+
+
+# Architecture
+
+## Angular
+Angular Google Maps directive: http://angular-google-maps.org/
