@@ -84,10 +84,17 @@ Angular Google Maps directive: http://angular-google-maps.org/
 
 # Notes
 
+* CORS (flask-restful): ```http://stackoverflow.com/questions/20147299/typeerror-on-cors-for-flask-restful```
+
+```from flask.ext.restful.utils import cors
+...
+api = Api(app)
+api.decorators=[cors.crossdomain(origin='*')]```
+
+* CORS (normal routes): ```http://flask-cors.readthedocs.org/en/latest/```
+
 * grunt-connect-proxy. For developing Angular apps with a Flask backend
-```http://fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/
-http://fettblog.eu/blog/2013/11/17/the-magic-of-grunt-contrib-connect-and-how-to-run-php-with-it/
-http://www.hierax.org/2014/01/grunt-proxy-setup-for-yeoman.html```
+```http://www.hierax.org/2014/01/grunt-proxy-setup-for-yeoman.html```
 
 * Problem: Error: [$resource:badcfg] Error in resource configuration. Expected response to contain an array but got an object
 Solution: http://stackoverflow.com/questions/20321351/error-resourcebadcfg-error-in-resource-configuration-expected-response-to
