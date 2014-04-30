@@ -46,9 +46,12 @@ It also watches the files for changes, allowing livereload (http://livereload.co
 Building for deployment is a slightly longer process as it performs some mininification and optimization
 
 ```grunt build```
-```grunt serve:dist```
 
 All the files needed for deployment can now be found in the dist directory.
+
+To preview the production app locally, run the following:
+
+```grunt serve:dist```
 
 The frontend does not have to be served from the same place as the backend. GitHub Pages is a good place to start.
 
@@ -78,3 +81,50 @@ Now you can commit to your entire repository in your default (master) branch and
 
 ## Angular
 Angular Google Maps directive: http://angular-google-maps.org/
+
+# Notes
+
+* dist version had a vendor.css load error.  The solution was to install a newer version of grunt-usemin
+
+```npm install grunt-usemin --save```
+
+More information can be found here: https://github.com/yeoman/generator-webapp/issues/242
+
+* Yeoman build without glyphicons
+http://stackoverflow.com/questions/18572941/why-does-yeoman-build-without-glyphicons
+
+Made a change to the first line of main.scss
+
+```$icon-font-path: "/fonts/";```
+
+Also added this to ```copy:dist``` in Gruntfile.js:
+
+```, {                                                   
+          expand: true,
+          cwd: '<%= yeoman.app %>/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap',
+          dest: '<%= yeoman.dist %>/fonts',
+          src: '*.*'
+      }
+      ```
+      
+* Error: Loading "cdnify.js" tasks...ERROR
+    >> Error: Unable to create git_template directory: Arguments to path.resolve must be strings
+    
+
+Solution: 
+
+```npm install grunt-google-cdn```
+
+* Error: When running ```grunt test```, there is an erro: ```Warning: No provider for "framework:jasmine"! (Resolving: framework:jasmine) Use --force to continue.```
+
+Solution: ```npm install karma-jasmine --save-dev```
+
+
+* Error: ```Running "karma:unit" (karma) task
+INFO [karma]: Karma v0.12.14 server started at http://localhost:8080/
+WARN [launcher]: Can not load "Chrome", it is not registered!
+  Perhaps you are missing some plugin?
+WARN [watcher]: Pattern "/home/tlukasiak/Desktop/yeoman-todo/test/mock/**/*.js" does not match any file.
+```
+
+Solution: ```npm install karma-chrome-launcher --save-dev```
