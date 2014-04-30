@@ -69,13 +69,39 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+      proxies: [
+        {
+          context: '/api',
+          host: 'localhost',
+          port: 5000,
+          // https: false,
+          // changeOrigin: false,
+        }
+      ],      
       livereload: {
         options: {
           open: true,
           base: [
             '.tmp',
             '<%= yeoman.app %>'
-          ]
+          ],
+                middleware: function (connect, options) {
+        var middlewares = [];
+           
+        if (!Array.isArray(options.base)) {
+          options.base = [options.base];
+        }
+           
+        // Setup the proxy
+        middlewares.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
+ 
+        // Serve static files
+        options.base.forEach(function(base) {
+          middlewares.push(connect.static(base));
+        });
+ 
+        return middlewares;
+      }
         }
       },
       test: {
@@ -385,6 +411,7 @@ module.exports = function (grunt) {
       'bowerInstall',
       'concurrent:server',
       'autoprefixer',
+      'configureProxies:server',
       'connect:livereload',
       'watch'
     ]);

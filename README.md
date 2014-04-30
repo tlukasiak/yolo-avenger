@@ -78,3 +78,10 @@ Now you can commit to your entire repository in your default (master) branch and
 
 ## Angular
 Angular Google Maps directive: http://angular-google-maps.org/
+
+# Notes
+
+* grunt-conmect-proxy. For developing Angular apps with a Flask backend
+```http://fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/
+http://fettblog.eu/blog/2013/11/17/the-magic-of-grunt-contrib-connect-and-how-to-run-php-with-it/
+http://www.hierax.org/2014/01/grunt-proxy-setup-for-yeoman.html```
