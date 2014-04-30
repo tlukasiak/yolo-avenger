@@ -84,7 +84,6 @@ Angular Google Maps directive: http://angular-google-maps.org/
 
 # Notes
 
-<<<<<<< HEAD
 * grunt-conmect-proxy. For developing Angular apps with a Flask backend
 ```http://fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/
 http://fettblog.eu/blog/2013/11/17/the-magic-of-grunt-contrib-connect-and-how-to-run-php-with-it/
@@ -114,8 +113,7 @@ Also added this to ```copy:dist``` in Gruntfile.js:
       ```
       
 * Error: Loading "cdnify.js" tasks...ERROR
-    >> Error: Unable to create git_template directory: Arguments to path.resolve must be strings
-    
+   
 
 Solution: 
 
@@ -134,4 +132,5 @@ WARN [watcher]: Pattern "/home/tlukasiak/Desktop/yeoman-todo/test/mock/**/*.js" 
 ```
 
 Solution: ```npm install karma-chrome-launcher --save-dev```
->>>>>>> cea5ee1a2e82e3f9d3bdd9e26c06674990edbccc
+
+
