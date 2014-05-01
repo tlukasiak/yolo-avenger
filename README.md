@@ -128,7 +128,7 @@ Also added this to ```copy:dist``` in Gruntfile.js:
 
 Solution: 
 
-```npm install grunt-google-cdn```
+```npm install grunt-google-cdn  --save-dev```
 
 * Error: When running ```grunt test```, there is an erro: ```Warning: No provider for "framework:jasmine"! (Resolving: framework:jasmine) Use --force to continue.```
 
