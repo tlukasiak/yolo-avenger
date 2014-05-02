@@ -14,6 +14,6 @@ $scope.map = {
         longitude: -74.076401
     },
     zoom: 12,
-    draggable: true
+    draggable: "true"
 };
   });

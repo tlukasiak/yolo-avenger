@@ -19,8 +19,20 @@ angular
     'ngSanitize',
     'ngRoute',
     'google-maps',
-    'taskService'
+    'taskService',
+    'btford.socket-io'
   ])
+
+.factory('socket', function (socketFactory) {
+  return socketFactory({
+    prefix: '',
+    ioSocket: io.connect('http://localhost:5000/test')
+  });
+})
+
+
+
+
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
