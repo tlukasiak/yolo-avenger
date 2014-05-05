@@ -27,7 +27,8 @@ angular
   return socketFactory({
     prefix: '',
     // ioSocket: io.connect('http://localhost:5000/test')
-    ioSocket: io.connect('http://intense-springs-3824.herokuapp.com:80/test')
+    // ioSocket: io.connect('http://intense-springs-3824.herokuapp.com:80/test')
+    ioSocket: io.connect('http://yolo-avenger-backend.herokuapp.com:80/test')
   });
 })
 
