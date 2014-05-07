@@ -1,16 +1,10 @@
 'use strict';
 
 angular.module('angularYeomanTestApp')
-  .controller('MainCtrl', function($scope, Task, socket) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function($scope, Task, socket, $log, Incident) {
+
     $scope.tasks = Task.query();
     window.tasks = $scope.tasks;
-
-
 
     $scope.stuffs = [];
 

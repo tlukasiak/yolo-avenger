@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularYeomanTestApp')
-  .controller('MyrouteCtrl', function($scope, $http, socket) {
+  .controller('MapCtrl', function($scope, $http, socket) {
 
     // A rough rectangle delineating a geographical region of interest
     var MIN_LAT = 40.709337;
@@ -70,13 +70,13 @@ angular.module('angularYeomanTestApp')
     }
 
     var futureResponse = $http.get('404.html')
-    .success(function(data, status, headers, config) {
-      $scope.data = data;
-      console.log(data);
-    })
-    .error(function(data, status, headers, config) {
-      throw new Error('Something went wrong...');
-    });
+      .success(function(data, status, headers, config) {
+        $scope.data = data;
+        console.log(data);
+      })
+      .error(function(data, status, headers, config) {
+        throw new Error('Something went wrong...');
+      });
 
 
   });
