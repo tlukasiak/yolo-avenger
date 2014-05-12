@@ -56,14 +56,13 @@ Number.prototype.toFixedDown = function(digits) {
 
     $scope.itemsPerPage = 10;
 
-
     $scope.$watch("currentPage", function(newValue, oldValue) {
       $log.log("table.js requesting")
       Incident.get(newValue * $scope.itemsPerPage, $scope.itemsPerPage).then(function(data) {
       var data2 = [];
       angular.forEach(data, function(value, key){
-        value.latitude = value.latitude.toFixedDown(2);
-        value.longitude = value.longitude.toFixedDown(2);
+        value.latitude = value.latitude.toFixedDown(3);
+        value.longitude = value.longitude.toFixedDown(3);
         value.longitude = -value.longitude; // HACK the toFixedDown funcion does not work on negative numbers
 
         data2.push(value);
