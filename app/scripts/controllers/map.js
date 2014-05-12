@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularYeomanTestApp')
+angular.module('yoloAvenger')
   .controller('MapCtrl', function($scope, $http, socket) {
 
     // A rough rectangle delineating a geographical region of interest

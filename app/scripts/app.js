@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('angularYeomanTestApp', [
+  .module('yoloAvenger', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
@@ -40,10 +40,6 @@ angular
     .when('/contact', {
       templateUrl: 'views/contact.html',
       controller: 'ContactCtrl'
-    })
-    .when('/table', {
-      templateUrl: 'views/table.html',
-      controller: 'TableCtrl'
     })
     .otherwise({
       redirectTo: '/'

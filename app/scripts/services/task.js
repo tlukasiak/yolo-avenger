@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularYeomanTestApp')
+angular.module('yoloAvenger')
   .factory("Task", function($resource) {
     return $resource(
       // "/tasks/:id",

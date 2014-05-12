@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularYeomanTestApp')
+angular.module('yoloAvenger')
   .directive('myDirective', function () {
     return {
       template: '<div></div>',
