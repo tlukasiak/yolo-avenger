@@ -3,6 +3,13 @@
 angular.module('yoloAvenger')
   .controller("MainCtrl", function($scope, $log, Incident) {
 
+// http://stackoverflow.com/questions/4912788/truncate-not-round-off-decimal-numbers-in-javascript
+Number.prototype.toFixedDown = function(digits) {
+    var re = new RegExp("(\\d+\\.\\d{" + digits + "})(\\d)"),
+        m = this.toString().match(re);
+    return m ? parseFloat(m[1]) : this.valueOf();
+};
+
   $scope.radioModel = 'day';
 
     // A rough rectangle delineating a geographical region of interest
@@ -53,9 +60,21 @@ angular.module('yoloAvenger')
     $scope.$watch("currentPage", function(newValue, oldValue) {
       $log.log("table.js requesting")
       Incident.get(newValue * $scope.itemsPerPage, $scope.itemsPerPage).then(function(data) {
-        $scope.pagedItems = data;
-        $log.log("table.js got: " + $scope.pagedItems);
-        $scope.markers = data;
+      var data2 = [];
+      angular.forEach(data, function(value, key){
+        value.latitude = value.latitude.toFixedDown(2);
+        value.longitude = value.longitude.toFixedDown(2);
+        value.longitude = -value.longitude; // HACK the toFixedDown funcion does not work on negative numbers
+
+        data2.push(value);
+     });
+
+        $scope.pagedItems = data2;
+        // $log.log("table.js got: " + $scope.pagedItems);
+
+        $scope.markers = data2;
+        // $log.log(data2)
+        // $log.log($scope.markers);
       });
     });
 
