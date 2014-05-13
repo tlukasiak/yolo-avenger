@@ -1,54 +1,59 @@
 <div ng-controller="MainCtrl">
 
-<!-- <div class="btn btn-primary btn-xs">Last 24 Hours</div>
+    <!-- <div class="btn btn-primary btn-xs">Last 24 Hours</div>
 <div class="btn btn-primary btn-xs">Last Week</div>
 <div class="btn btn-primary btn-xs">Last Month</div> -->
 
     <!-- <pre>{{radioModel || 'null'}}</pre> -->
     <div class="btn-group">
-        <label class="btn btn-primary btn-xs" ng-model="radioModel" btn-radio="'day'">Last 24 Hours</label>
-        <label class="btn btn-primary btn-xs" ng-model="radioModel" btn-radio="'week'">Last Week</label>
-        <label class="btn btn-primary btn-xs" ng-model="radioModel" btn-radio="'month'">Last Month</label>
+        <label class="btn btn-primary btn-xs" ng-model="radioModel" btn-radio="'12 hours'">Last 12 Hours</label>
+        <label class="btn btn-primary btn-xs" ng-model="radioModel" btn-radio="'1 day'">Last 24 Hours</label>
+        <label class="btn btn-primary btn-xs" ng-model="radioModel" btn-radio="'1 week'">Last Week</label>
+        <label class="btn btn-primary btn-xs" ng-model="radioModel" btn-radio="'1 month'">Last Month</label>
     </div>
 
-<google-map center='map.center' zoom='map.zoom' draggable={{map.draggable}} refresh='map.refresh'>
-  <!-- <layer type='TrafficLayer'></layer> -->
+    <google-map center='map.center' zoom='map.zoom' draggable={{map.draggable}} refresh='map.refresh'>
+        <!-- <layer type='TrafficLayer'></layer> -->
 
-  <div ng-repeat="marker in markers">{{ marker}}
+        <!--   <div ng-repeat="marker in markers">{{ marker}}
     <marker coords='marker'>
     </marker>
   </div>
+ -->
+        <markers models="markers" coords="'self'" doCluster="true"></markers>
 
-</google-map>
+    </google-map>
 
-  <table class="table table-striped">
-    <thead>
-      <td colspan="12">
-        <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" ng-change="pageChanged()" items-per-page="itemsPerPage"></pagination>
-      </td>
-    </thead>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Time</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in pagedItems">
-        <td>{{item._id}}</td>
-        <td>{{item.timestamp}}</td>
-        <td>{{item.latitude}}</td>
-        <td>{{item.longitude}}</td>
-        <td>{{item.call_code_description}}</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <td colspan="12">
-        <pre>Page: {{currentPage}} / {{numPages}}</pre>
-      </td>
-    </tfoot>
-  </table>
-</div>
+    <br/>
+
+<!--     <table class="table table-striped">
+        <thead>
+            <td colspan="12">
+                <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" ng-change="pageChanged()" items-per-page="itemsPerPage"></pagination>
+            </td>
+        </thead>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Time</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in pagedItems">
+                <td>{{item._id}}</td>
+                <td>{{item.timestamp}}</td>
+                <td>{{item.latitude}}</td>
+                <td>{{item.longitude}}</td>
+                <td>{{item.call_code_description}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td colspan="12">
+                <pre>Page: {{currentPage}} / {{numPages}}</pre>
+            </td>
+        </tfoot>
+    </table>
+ --></div>
