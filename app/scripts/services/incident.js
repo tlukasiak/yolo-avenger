@@ -12,7 +12,7 @@ angular.module('yoloAvenger')
       // Get list of open angular js pull requests from github
       $http({
         method: 'GET',
-        url: 'https://162.243.24.143/api/action/datastore_search?resource_id=9accc92a-c800-4495-8173-650235dd20f1',
+        url: 'https://data.openjerseycity.org/api/action/datastore_search?resource_id=9accc92a-c800-4495-8173-650235dd20f1',
         params: {
           offset: offset,
           limit: limit
@@ -36,7 +36,7 @@ angular.module('yoloAvenger')
       // Get list of open angular js pull requests from github
       $http({
         method: 'GET',
-        url: 'https://162.243.24.143/api/action/datastore_search?resource_id=9accc92a-c800-4495-8173-650235dd20f1',
+        url: 'https://data.openjerseycity.org/api/action/datastore_search?resource_id=9accc92a-c800-4495-8173-650235dd20f1',
         params: {
           offset: 10,
           limit: 10
@@ -60,8 +60,9 @@ angular.module('yoloAvenger')
       // Get list of open angular js pull requests from github
       $http({
         method: 'GET',
-        // url: 'https://162.243.24.143/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%229accc92a-c800-4495-8173-650235dd20f1%22%20WHERE%20timestamp%20%3E=%20%272013-12-01T00:00:00%27::TIMESTAMP%20-%20%271%20hour%27::INTERVAL',
-        url: encodeURI('https://162.243.24.143/api/action/datastore_search_sql?sql=SELECT * from "9accc92a-c800-4495-8173-650235dd20f1" WHERE timestamp >= \'2013-12-01T00:00:00\'::TIMESTAMP - \''+timeFrame+'\'::INTERVAL'),
+        // url: 'https://data.openjerseycity.org/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%229accc92a-c800-4495-8173-650235dd20f1%22%20WHERE%20timestamp%20%3E=%20%272013-12-01T00:00:00%27::TIMESTAMP%20-%20%271%20hour%27::INTERVAL',
+        // url: encodeURI('https://data.openjerseycity.org/api/action/datastore_search_sql?sql=SELECT * from "9accc92a-c800-4495-8173-650235dd20f1" WHERE timestamp >= \'2013-12-01T00:00:00\'::TIMESTAMP - \''+timeFrame+'\'::INTERVAL'),
+        url: encodeURI('https://data.openjerseycity.org/api/action/datastore_search_sql?sql=SELECT latitude, longitude from "9accc92a-c800-4495-8173-650235dd20f1" WHERE timestamp >= \'2013-12-01T00:00:00\'::TIMESTAMP - \''+timeFrame+'\'::INTERVAL'),
       })
         .success(function(data) {
           console.log("resolving " + data);
