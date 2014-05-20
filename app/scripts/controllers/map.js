@@ -4,6 +4,7 @@ angular.module('yoloAvenger')
   .controller('MapCtrl', function($scope, $http, socket) {
 
     // A rough rectangle delineating a geographical region of interest
+    // TODO: move constants to an Angular value service or something like that
     var MIN_LAT = 40.709337;
     var MAX_LAT = 40.742510;
     var MIN_LNG = -74.036793;
