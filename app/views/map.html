@@ -12,13 +12,10 @@ map.zoom: {{map.zoom}}
 <br />
 <p />
 <google-map center='map.center' zoom='map.zoom' draggable={{map.draggable}} refresh='map.refresh'>
-  <!-- <layer type='TrafficLayer'></layer> -->
-
-  <div ng-repeat="marker in markers">{{ marker}}
-    <marker coords='marker'>
-    </marker>
-  </div>
-
+  <!-- <div ng-repeat="marker in markers"> -->
+    <!-- <marker coords='marker'></marker> -->
+            <markers models="markers" coords="'self'" doCluster="false"></markers>
+  <!-- </div> -->
 </google-map>
 
 <br />
