@@ -1,6 +1,6 @@
 # Introduction
 
-This is an Yeoman-scaffolded Angular app with a Flask backend
+This repo is a experiment in creating a Yeoman-scaffolded Angular app with a Flask backend.
 
 The resulting page can be found here: http://tlukasiak.github.io/yolo-avenger
 
@@ -82,9 +82,14 @@ Now you can commit to your entire repository in your default (master) branch and
 ## Angular
 Angular Google Maps directive: http://angular-google-maps.org/
 
-# Notes
+## Flask
+Flask and Websockets: http://blog.miguelgrinberg.com/post/easy-websockets-with-flask-and-gevent
 
-* CORS (flask-restful): ```http://stackoverflow.com/questions/20147299/typeerror-on-cors-for-flask-restful```
+
+# Random Developer Notes
+
+* CORS (flask-restful): `http://stackoverflow.com/questions/20147299/typeerror-on-cors-for-flask-restful`
+
 
 ```from flask.ext.restful.utils import cors
 ...
